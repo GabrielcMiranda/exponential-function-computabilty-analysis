@@ -34,9 +34,13 @@ Trabalho de AV1 — Teoria da Computabilidade (CC5, 01/2026)
 
 ```
 /monolitico/exponenciacao.c    — Programa monolítico (C com goto)
+/monolitico/TEORIA.md          — Descrição formal do programa monolítico
 /iterativo/exponenciacao.c     — Programa iterativo (C com while)
+/iterativo/TEORIA.md           — Descrição formal do programa iterativo
 /recursivo/exponenciacao.c     — Programa recursivo (C com chamada recursiva)
-/assembly/                     — (Bônus) Versão em Assembly
+/recursivo/TEORIA.md           — Descrição formal do programa recursivo
+/assembly/exponenciacao.asm    — (Bônus) Programa monolítico em Assembly x86_64
+/assembly/TEORIA.md            — Documentação do Assembly
 /apresentacao/                 — Slides da apresentação
 /anexos/                       — Anexos complementares
 PLANO.md                       — Plano de trabalho
@@ -60,6 +64,10 @@ gcc iterativo/exponenciacao.c -o iterativo/exponenciacao
 
 # Recursivo
 gcc recursivo/exponenciacao.c -o recursivo/exponenciacao
+
+# Assembly (Bônus) — requer NASM + GCC
+nasm -f win64 assembly/exponenciacao.asm -o assembly/exponenciacao.obj
+gcc assembly/exponenciacao.obj -o assembly/exponenciacao.exe
 ```
 
 ### Execução
@@ -69,12 +77,13 @@ gcc recursivo/exponenciacao.c -o recursivo/exponenciacao
 ./monolitico/exponenciacao
 ./iterativo/exponenciacao
 ./recursivo/exponenciacao
+./assembly/exponenciacao
 ```
 
 ## Linguagens Utilizadas
 
 - **C** — para os 3 programas (monolítico, iterativo, recursivo)
-- **Assembly x86** — (bônus) versão monolítica/iterativa
+- **Assembly x86_64** — (bônus) versão monolítica em NASM, linkada com C runtime (Windows x64)
 
 ## Uso de Inteligência Artificial
 

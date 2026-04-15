@@ -20,18 +20,17 @@ int main() {
     /* Validação do domínio: x >= 0 e n >= 0 */
     if (x < 0 || n < 0) {
         printf("Erro: dominio da funcao exige x >= 0 e n >= 0\n");
-        return 1;
+    } else {
+        r = 1;
+        i = 0;
+
+        while (i < n) {
+            r = r * x;
+            i = i + 1;
+        }
+
+        printf("Resultado: %d^%d = %d\n", x, n, r);
     }
-
-    r = 1;
-    i = 0;
-
-    while (i < n) {
-        r = r * x;
-        i = i + 1;
-    }
-
-    printf("Resultado: %d^%d = %d\n", x, n, r);
 
     return 0;
 }

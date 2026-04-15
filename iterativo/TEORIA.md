@@ -52,15 +52,13 @@ fim programa
 | `ler(n)`                                | `scanf("%d", &n)`                                 |
 | `se (x < 0 \|\| n < 0) então`           | `if (x < 0 \|\| n < 0)`                           |
 | `escreva(erro)`                         | `printf("Erro...")` + `return 1`                  |
-| `senão`                                 | bloco `else` (implícito — código após o `if`)     |
+| `senão`                                 | bloco `else { ... }` — contém toda a computação  |
 | `r := 1`                                | `r = 1`                                           |
 | `i := 0`                                | `i = 0`                                           |
 | `enquanto (i < n) faça`                 | `while (i < n)`                                   |
 | `r := r * x`                            | `r = r * x`                                       |
 | `i := i + 1`                            | `i = i + 1`                                       |
-| `escreva("Resultado: ", x, "^", n, " = ", r)` | `printf("Resultado: %d^%d = %d\n", x, n, r)` |
-
-> **Nota**: o código C usa `return 1` após o erro, o que é um desvio de implementação aceito em C mas não existe no modelo formal. No modelo formal, o fluxo é controlado inteiramente pelo `senão`.
+| `escreva(resultado)` | `printf("Resultado: %d^%d = %d\n", x, n, r)` |
 
 ---
 

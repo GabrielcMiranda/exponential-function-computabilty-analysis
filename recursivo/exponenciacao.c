@@ -28,6 +28,12 @@ int main() {
     printf("Digite o expoente (n): ");
     scanf("%d", &n);
 
+    /* Validação do domínio: x >= 0 e n >= 0 */
+    if (x < 0 || n < 0) {
+        printf("Erro: dominio da funcao exige x >= 0 e n >= 0\n");
+        return 1;
+    }
+
     resultado = exponenciacao(x, n);
 
     printf("Resultado: %d^%d = %d\n", x, n, resultado);

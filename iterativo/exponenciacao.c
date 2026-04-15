@@ -9,7 +9,7 @@
 #include <stdio.h>
 
 int main() {
-    int x, n, resultado, i;
+    int x, n, r, i;
 
     printf("=== Programa Iterativo (while) ===\n");
     printf("Digite a base (x): ");
@@ -17,15 +17,21 @@ int main() {
     printf("Digite o expoente (n): ");
     scanf("%d", &n);
 
-    resultado = 1;
+    /* Validação do domínio: x >= 0 e n >= 0 */
+    if (x < 0 || n < 0) {
+        printf("Erro: dominio da funcao exige x >= 0 e n >= 0\n");
+        return 1;
+    }
+
+    r = 1;
     i = 0;
 
     while (i < n) {
-        resultado = resultado * x;
+        r = r * x;
         i = i + 1;
     }
 
-    printf("Resultado: %d^%d = %d\n", x, n, resultado);
+    printf("Resultado: %d^%d = %d\n", x, n, r);
 
     return 0;
 }
